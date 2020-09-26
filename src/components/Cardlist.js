@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 
 
-import { Button,Container,Navbar,Nav} from 'react-bootstrap';
+//import { Button,Container,Navbar,Nav} from 'react-bootstrap';
 import './common.css'
 
 function MovieCard(props) {
@@ -10,6 +10,7 @@ function MovieCard(props) {
 
   // states goes here
   const [favourite,setFavourite]=useState(false)
+  const [ids,setIds]=useState([])
 
 
 
@@ -24,16 +25,16 @@ function MovieCard(props) {
         let my_fav1=JSON.parse(my_fav)||[]
         
         let mapped=my_fav1.map(ele => ele.movieId)
-        console.log(mapped)
+        
         if(mapped.includes(movieId)){
-              console.log('favbefore',my_fav1)
+
               my_fav1=my_fav1.filter( el => el.movieId!== movieId )
  
-              console.log('favourate',my_fav1)
+            
         }
         else
 
-        alert("do something")
+       // alert("do something")
         {my_fav1.push({movieId,movieName,type})}
         
     

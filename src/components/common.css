@@ -11,6 +11,16 @@ body {
   }
 
 
+  /* navbar area related changes */
+
+  .home-link,.favourite-link{
+
+    font-size: 20px;
+    text-decoration: none !important;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
 
   /* search area related changes */
 
@@ -33,8 +43,9 @@ input#inlineFormInputName2 {
 
 .cards-area {
     display: grid;
-    grid-template-columns: 33.3% 33.3% 33.3%;
-    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 3em;
+    grid-gap: 50px;
 }
 
 /* dropdown coomponent related cahnges goose here */
@@ -46,4 +57,71 @@ button#dropdown-basic-button{
 .result-loading,.result-nodata{
     position: absolute;
     left: 40%;
+}
+
+
+/* favourite componenets related changes are going to happen from here */
+
+.favourite-card{
+    width: 60%;
+    height: auto;
+    /* opacity: 0.18; */
+    border-radius: 10px;
+    background-color: #a1cde645;
+    /* margin-bottom: 1em; */
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.favourite-p{
+    font-size: 18px;
+    padding: 2em 2em 2em 2em;
+    /* width: 701px; */
+    /* height: 70px; */
+    font-family: Noto Sans JP;
+    /* font-size: 30px; */
+    font-weight: 300;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: #000000;
+}
+
+
+/*   ===media query===  */
+
+@media only screen and (max-width: 600px) {
+    
+    .favourite-title{
+        font-size: 2em;
+    }
+    
+    .cards-area {
+        
+        grid-template-columns: 1fr;
+       
+    }
+    .card{
+        width: 15rem;
+        margin-left: auto;
+    margin-right: auto;
+    }
+  }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+    .ml-auto.navbar-nav{
+
+        text-align: center;
+    }
+
+    .cards-area {
+        
+        grid-template-columns: 1fr 1fr;
+       
+    }
 }
