@@ -15,7 +15,7 @@ function Header(props) {
 
 <Navbar collapseOnSelect expand="lg" bg="light" fixed="top" >
 <Container>
-<Link to="/" className="home-link">Home </Link>
+<Link to="/movie-assingnment" className="home-link">Home </Link>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
    
