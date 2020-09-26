@@ -57,6 +57,7 @@ function dropdownHandler(e){
       <Dropdown.Item href="#">episodes</Dropdown.Item>
       </div>
 </DropdownButton>
+
    
    <>
     <div className="cards-area" >
@@ -64,7 +65,7 @@ function dropdownHandler(e){
          <h3 className="result-loading">loading...</h3>
          ): nodata ? (<h3 className="result-nodata">no data available...</h3>) : (
           movies.map(movie => (
-            <MovieCard movies={movie} key={movie.imdbID} />
+            <MovieCard movies={movie} movieId={movie.imdbID} movieName={movie.Title} type={movie.Type} key={movie.imdbID} />
          ))
         )}
         </div>
