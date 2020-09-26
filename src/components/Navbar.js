@@ -1,7 +1,7 @@
-import React,{useState} from 'react';
+import React from 'react';
+import {Link} from 'react-router-dom';
 
-
-import { Button,Container,Navbar,Nav} from 'react-bootstrap';
+import { Container,Navbar,Nav} from 'react-bootstrap';
 import './common.css'
 
 function Header(props) {
@@ -15,12 +15,13 @@ function Header(props) {
 
 <Navbar collapseOnSelect expand="lg" bg="light" fixed="top" >
 <Container>
-  <Navbar.Brand href="#home">Home</Navbar.Brand>
+<Link to="/" className="home-link">Home </Link>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
    
     <Nav className="ml-auto">
-      <Nav.Link href="#deets">Favourites</Nav.Link>
+      {/* <Nav.Link href="#deets">Favourites</Nav.Link> */}
+      <Link to="/favourite" className="favourite-link"> Favourites </Link>
    
     </Nav>
   </Navbar.Collapse>

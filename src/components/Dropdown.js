@@ -62,8 +62,8 @@ function dropdownHandler(e){
    <>
     <div className="cards-area" >
    {loading ? (
-         <h3 className="result-loading">loading...</h3>
-         ): nodata ? (<h3 className="result-nodata">no data available...</h3>) : (
+         <h3 className="result-loading" style={{textAlign:"center"}}>loading...</h3>
+         ): nodata ? (<h3 className="result-nodata" style={{textAlign:"center"}}>Too Many Datas...</h3>) : (
           movies.map(movie => (
             <MovieCard movies={movie} movieId={movie.imdbID} movieName={movie.Title} type={movie.Type} key={movie.imdbID} />
          ))
