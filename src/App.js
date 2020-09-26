@@ -11,10 +11,10 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Route path="/" exact>
+      <Route path="/movie-assingnment" exact>
       <Search/>
      </Route>
-     {/* <Redirect to="/"/> */}
+     <Redirect to="/movie-assingnment"/>
      <Route path="/favourite">
      <Favorites/>
      </Route>
