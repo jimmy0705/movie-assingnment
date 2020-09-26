@@ -27,7 +27,7 @@ function dropdownHandler(e){
 
   if (movies!==undefined ){
     if (value==='movie'){
-        console.log('inside 1')
+       
         movies=movies.filter(el => el.Type==='movie')
     }
     else if (value==='series'){
