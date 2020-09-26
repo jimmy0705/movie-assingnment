@@ -23,6 +23,8 @@ input#inlineFormInputName2 {
 }
 
 
+
+
 /* card related changes goes here */
 
 .cards-area {
@@ -35,8 +37,13 @@ input#inlineFormInputName2 {
     grid-gap: 15px;
 }
 
-/* dropdown related cahnges goose here */
+/* dropdown coomponent related cahnges goose here */
 
 button#dropdown-basic-button{
     width: 9em;
+}
+
+.result-loading,.result-nodata{
+    position: absolute;
+    left: 40%;
 }

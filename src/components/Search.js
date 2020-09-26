@@ -67,7 +67,7 @@ function Search(props) {
     <div className="search-area" style={{marginTop:"6em"}}>
 
 <Container>
-  <h3 style={{textAlign:"center"}}>Search Movies</h3>
+  <h2 style={{textAlign:"center"}}>Search Movies</h2>
 
 <Form inline onSubmit={searchMovies} >
 
