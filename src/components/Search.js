@@ -18,7 +18,7 @@ function Search(props) {
     const [loading, setLoading] = useState(false);
     const [nodata, setNodata] = useState(false);
     const [errorMessage, setErrorMessage] = useState(null);
-    const [value,setValue] = useState("All")
+    //const [value,setValue] = useState("All")
     const [movies, setMovies] = useState([]);
 
    
@@ -37,7 +37,7 @@ function Search(props) {
       try {
           const res = await fetch(url);
           const data  = await res.json();
-          console.log(typeof(data.Response))
+         // console.log(typeof(data.Response))
           console.log(data.Response)
           if(data.Response === "False"){
             setNodata(true)
@@ -45,7 +45,7 @@ function Search(props) {
             return;
           }
           setLoading(false);
-          //setNodata(false);
+          setNodata(false);
           setMovies(data.Search);
           
         // console.log(data)
@@ -67,15 +67,17 @@ function Search(props) {
     <div className="search-area" style={{marginTop:"6em"}}>
 
 <Container>
+  <h3 style={{textAlign:"center"}}>Search Movies</h3>
 
-<Form inline>
-  <Form.Label htmlFor="inlineFormInputName2" srOnly>
-    Name
-  </Form.Label>
+<Form inline onSubmit={searchMovies} >
+
   <Form.Control
     className="mb-2 mr-sm-2"
     id="inlineFormInputName2"
-    placeholder="Jane Doe"
+    placeholder="Search movies..."
+    value={query}
+    onChange={e=>setQuery(e.target.value)}
+    required
   />
  
   <Button type="submit" className="mb-2">
@@ -83,7 +85,7 @@ function Search(props) {
   </Button>
 </Form>
 
-<Dropdwn/>
+<Dropdwn movies ={movies} loading={loading} nodata={nodata}/>
    
 </Container>
   
