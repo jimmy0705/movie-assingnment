@@ -14,7 +14,7 @@ function App() {
       <Route path="/" exact>
       <Search/>
      </Route>
-     <Redirect to="/"/>
+     {/* <Redirect to="/"/> */}
      <Route path="/favourite">
      <Favorites/>
      </Route>
