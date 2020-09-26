@@ -101,7 +101,7 @@ button#dropdown-basic-button{
     
     .cards-area {
         
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
        
     }
     .card{
