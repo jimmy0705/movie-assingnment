@@ -1,0 +1,30 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+  
+    line-height: 1.625em;
+    position: relative;
+    height: 100vh;
+    padding-right: 0px !important;
+  }
+
+
+
+  /* serach area related changes */
+
+  .form-inline {
+    justify-content: center;
+}
+
+input#inlineFormInputName2 {
+    width: 20em;
+}
+
+
+/* card related changes goes here */
+
+.cards-area {
+    margin-top: 4em;
+}
