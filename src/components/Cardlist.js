@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 
 
 import { Button,Container,Navbar,Nav} from 'react-bootstrap';
@@ -6,7 +6,54 @@ import './common.css'
 
 function MovieCard(props) {
  // console.log(props)
-  const {movies}=props
+  const {movies,movieId,movieName,type  }=props
+
+  // states goes here
+  const [favourite,setFavourite]=useState(false)
+
+
+
+  //event handlers goes from here
+
+  function favouriteHandler(e){
+    e.preventDefault();
+    setFavourite(!favourite)
+
+    let my_fav=localStorage.getItem('id')
+        
+        let my_fav1=JSON.parse(my_fav)||[]
+        
+        let mapped=my_fav1.map(ele => ele.movieId)
+        console.log(mapped)
+        if(mapped.includes(movieId)){
+              console.log('favbefore',my_fav1)
+              my_fav1=my_fav1.filter( el => el.movieId!== movieId )
+ 
+              console.log('favourate',my_fav1)
+        }
+        else
+
+        alert("do something")
+        {my_fav1.push({movieId,movieName,type})}
+        
+    
+        
+        localStorage.setItem('id',JSON.stringify(my_fav1))
+
+    
+  
+  }
+
+  useEffect(()=>{
+    const x= localStorage.getItem('id')
+    const arr=JSON.parse(x)||[]
+    arr.map((x,i)=>{
+        if(x.movieId===movieId){
+            setFavourite(true)
+        }
+    })
+ 
+ },[])
   
 
   return (
@@ -18,7 +65,7 @@ function MovieCard(props) {
   <div className="card-body">
     <h5 className="card-title">{movies.Title}</h5>
   <p className="card-text">{movies.Year}</p>
-    <a href="#" className="btn btn-primary">Add Favourite</a>
+    <a href="#" className="btn btn-primary" onClick={favouriteHandler} > {!favourite ? "Favorite" : "Unfavorite"}</a>
   </div>
 {/* </div> */}
 
